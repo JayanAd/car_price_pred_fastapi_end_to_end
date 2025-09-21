@@ -11,7 +11,7 @@ app.add_middleware(LoggingMiddleware)
 
 # Monitoring using Prometheus
 app.include_router(routes_auth.router, tags=["Auth"])
-app.include(routes_predict.router, tags=["Prediction"])
+app.include_router(routes_predict.router, tags=["Prediction"])
 
 # Monitoring using Prometheus
 Instrumentator().instrument(app).expose(app)

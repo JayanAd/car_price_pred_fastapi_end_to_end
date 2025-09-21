@@ -6,7 +6,7 @@ redis_client = redis.Redis.from_url(settings.REDIS_URL)
 
 
 def get_cached_prediction(key:str):
-    value = redis_client.get*key
+    value = redis_client.get(key)
     if value:
         return json.loads(value)
     
